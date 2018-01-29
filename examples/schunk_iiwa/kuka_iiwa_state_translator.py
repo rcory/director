@@ -22,7 +22,7 @@ class KukaIiwaStateTranslator(object):
         return lastGripperMsg
 
     def setupJointNames(self):
-        self.fingerJointNames = ['wsg_50_finger_left_joint', 'wsg_50_finger_right_joint']
+        self.fingerJointNames = ['wsg_50_base_joint_gripper_left', 'wsg_50_base_joint_gripper_right']
 
         self.armJointNames = ['iiwa_joint_1', 'iiwa_joint_2', 'iiwa_joint_3', 'iiwa_joint_4', 'iiwa_joint_5', 'iiwa_joint_6', 'iiwa_joint_7']
 
