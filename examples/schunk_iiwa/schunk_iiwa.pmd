@@ -1,0 +1,21 @@
+group "1.visualization"{
+   cmd "1.1.director" {
+       exec = "/Users/rickcory/dev/director/build/install/bin/drake-visualizer --script ${DRAKE_WORKSPACE}/multibody/rigid_body_plant/visualization/contact_viz.py --script ${DRAKE_WORKSPACE}/multibody/rigid_body_plant/visualization/show_time.py --script iiwaManipApp.py --bot-config iiwaManip.cfg --director-config director_config.json" ;
+       host = "localhost";
+   }
+   cmd "1.2.state_translator" {
+       exec = "/Users/rickcory/dev/director/build/install/bin/directorPython /Users/rickcory/dev/director/examples/schunk_iiwa/kuka_iiwa_state_translator.py" ;
+       host = "localhost";
+   }
+}
+
+cmd "2. lcm-logplayer-gui" {
+	exec = "/Users/rickcory/dev/drake_install_tree/bin/lcm-logplayer-gui"; 
+	host = "localhost";
+}
+
+cmd "3.lcm-spy" {
+    exec = "${DRAKE_WORKSPACE}/bazel-bin/lcmtypes/drake-lcm-spy --jvm_flag=-Djava.net.preferIPv4Stack=true";
+    host = "localhost";
+}
+
